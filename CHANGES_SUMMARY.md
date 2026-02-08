@@ -49,7 +49,7 @@ The original `run.bat` used `dotnet run` which:
 **QUICKSTART.md:**
 - Clarified what happens when you run `run.bat`
 - Added detailed explanation in the Advanced section about when to use `publish.bat`
-- Explained the size difference (~150KB vs ~268MB) and use cases for each
+- Explained the size difference (~149KB exe vs ~268MB total folder) and use cases for each
 
 ## Technical Details
 
@@ -57,14 +57,14 @@ The original `run.bat` used `dotnet run` which:
 
 **1. run.bat creates a "framework-dependent" executable:**
 - Location: `src\MotorsportsApp.Desktop\bin\Release\net8.0-windows\win-x64\MotorsportsApp.Desktop.exe`
-- Size: ~149KB
+- Size: ~149KB (executable only)
 - Requirements: .NET 8 runtime must be installed on the PC
 - Use case: Development and personal use on machines with .NET installed
 
 **2. publish.bat creates a "self-contained" executable:**
 - Location: `publish\win-x64\MotorsportsApp.Desktop.exe`
-- Size: ~268MB (includes entire folder)
-- Requirements: None - .NET runtime is bundled
+- Size: ~149KB (executable itself), ~268MB (entire publish folder with all dependencies)
+- Requirements: None - .NET runtime is bundled in the folder
 - Use case: Distribution to other users, portable installations
 
 ## Testing Performed
