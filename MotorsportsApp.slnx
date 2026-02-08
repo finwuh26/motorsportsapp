@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/MotorsportsApp.Core/MotorsportsApp.Core.csproj" />
+    <Project Path="src/MotorsportsApp.Data/MotorsportsApp.Data.csproj" />
+    <Project Path="src/MotorsportsApp.Desktop/MotorsportsApp.Desktop.csproj" />
+    <Project Path="src/MotorsportsApp.Models/MotorsportsApp.Models.csproj" />
+    <Project Path="src/MotorsportsApp.Services/MotorsportsApp.Services.csproj" />
+  </Folder>
+</Solution>
