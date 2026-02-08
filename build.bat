@@ -33,7 +33,7 @@ if not exist "MotorsportsApp.slnx" (
 )
 
 REM Restore dependencies
-echo. Restoring NuGet packages...
+echo Restoring NuGet packages...
 dotnet restore
 if %errorlevel% neq 0 (
     echo.
@@ -44,7 +44,7 @@ if %errorlevel% neq 0 (
 echo.
 
 REM Build the solution
-echo. Building MotorsportsApp in Release configuration...
+echo Building MotorsportsApp in Release configuration...
 dotnet build -c Release
 if %errorlevel% neq 0 (
     echo.

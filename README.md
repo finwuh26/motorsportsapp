@@ -20,6 +20,14 @@ It's a complete beginner-friendly guide that will get you up and running in minu
 build.bat && run.bat
 ```
 
+### Available Scripts
+
+| Script | Windows | Linux/Mac | Description |
+|--------|---------|-----------|-------------|
+| **build** | `build.bat` | `./build.sh` | Compiles the application |
+| **run** | `run.bat` | `./run.sh` | Runs the application (Windows only) |
+| **publish** | `publish.bat` | `./publish.sh` | Creates standalone executable |
+
 ---
 
 ## Overview
