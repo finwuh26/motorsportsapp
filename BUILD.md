@@ -1,5 +1,9 @@
 # Build and Run Scripts
 
+> **New to this project?** Check out [QUICKSTART.md](QUICKSTART.md) for a complete beginner-friendly guide!
+
+---
+
 ## Windows
 
 ### Build
