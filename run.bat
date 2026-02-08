@@ -1,6 +1,9 @@
 @echo off
 REM Run script for MotorsportsApp
 
+REM Define the executable path
+set "EXE_PATH=src\MotorsportsApp.Desktop\bin\Release\net8.0-windows\win-x64\MotorsportsApp.Desktop.exe"
+
 echo =========================================
 echo   MotorsportsApp Run Script
 echo =========================================
@@ -42,10 +45,10 @@ echo √ Build completed successfully!
 echo =========================================
 echo.
 echo Executable created at:
-echo   src\MotorsportsApp.Desktop\bin\Release\net8.0-windows\win-x64\MotorsportsApp.Desktop.exe
+echo   %EXE_PATH%
 echo.
 echo Starting MotorsportsApp...
 echo.
 
 REM Run the built executable
-src\MotorsportsApp.Desktop\bin\Release\net8.0-windows\win-x64\MotorsportsApp.Desktop.exe
+%EXE_PATH%

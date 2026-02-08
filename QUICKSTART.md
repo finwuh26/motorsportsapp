@@ -185,7 +185,7 @@ Want to create a version that can run on **any Windows PC without needing .NET i
 4. You can copy the entire `publish\win-x64` folder anywhere (or to another PC) and run the `.exe`
 
 **What's the difference?**
-- `run.bat` creates an .exe that needs .NET installed (~149KB executable + requires .NET runtime)
+- `run.bat` creates an .exe that needs .NET installed (~149KB executable)
 - `publish.bat` creates a fully standalone .exe (~268MB total folder size with all dependencies included)
 
 The standalone version is larger but completely self-contained. Perfect for:
