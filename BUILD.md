@@ -21,6 +21,25 @@ run.bat
 publish.bat
 ```
 
+## Linux and macOS
+
+The application is a Windows WPF desktop app and can only run on Windows. However, the scripts below allow you to build the class libraries and verify the code compiles.
+
+### Build
+```bash
+./build.sh
+```
+
+### Run
+```bash
+./run.sh    # Will show a message that the app requires Windows
+```
+
+### Publish
+```bash
+./publish.sh    # Creates Windows executable
+```
+
 ## Configuration
 
 The application uses the following configuration:
