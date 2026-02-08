@@ -1,5 +1,9 @@
 # Build and Run Scripts
 
+> **New to this project?** Check out [QUICKSTART.md](QUICKSTART.md) for a complete beginner-friendly guide!
+
+---
+
 ## Windows
 
 ### Build
@@ -15,6 +19,25 @@ run.bat
 ### Publish
 ```batch
 publish.bat
+```
+
+## Linux and macOS
+
+The application is a Windows WPF desktop app and can only run on Windows. However, the scripts below allow you to build the class libraries and verify the code compiles.
+
+### Build
+```bash
+./build.sh
+```
+
+### Run
+```bash
+./run.sh    # Will show a message that the app requires Windows
+```
+
+### Publish
+```bash
+./publish.sh    # Creates Windows executable
 ```
 
 ## Configuration

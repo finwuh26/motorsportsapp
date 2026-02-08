@@ -2,6 +2,34 @@
 
 A production-ready Windows desktop application for Formula 1 live timing, analytics, and historical data visualization.
 
+---
+
+## 🚀 Quick Start
+
+**New here? Start with the [QUICKSTART.md](QUICKSTART.md) guide!**
+
+It's a complete beginner-friendly guide that will get you up and running in minutes.
+
+**TL;DR:**
+```batch
+# Windows - Just double-click these files:
+1. build.bat   (builds the app)
+2. run.bat     (runs the app)
+
+# Or use command line:
+build.bat && run.bat
+```
+
+### Available Scripts
+
+| Script | Windows | Linux/Mac | Description |
+|--------|---------|-----------|-------------|
+| **build** | `build.bat` | `./build.sh` | Compiles the application |
+| **run** | `run.bat` | `./run.sh` | Runs the application (Windows only) |
+| **publish** | `publish.bat` | `./publish.sh` | Creates standalone executable |
+
+---
+
 ## Overview
 
 This application provides real-time F1 live timing, telemetry visualization, deep session analysis, and replay capabilities. Built with .NET 8 and WPF, it offers a modern, high-performance user interface inspired by professional race engineering tools while remaining fully community-friendly and open-source.
