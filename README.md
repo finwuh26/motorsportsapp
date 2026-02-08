@@ -25,8 +25,12 @@ build.bat && run.bat
 | Script | Windows | Linux/Mac | Description |
 |--------|---------|-----------|-------------|
 | **build** | `build.bat` | `./build.sh` | Compiles the application |
-| **run** | `run.bat` | `./run.sh` | Runs the application (Windows only) |
-| **publish** | `publish.bat` | `./publish.sh` | Creates standalone executable |
+| **run** | `run.bat` | `./run.sh` | Builds and runs the app directly (creates .exe in bin folder) |
+| **publish** | `publish.bat` | `./publish.sh` | Creates standalone distributable .exe (can run on any Windows PC) |
+
+**What's the difference?**
+- `run.bat` - Builds and runs the app from source. Creates an executable in `bin/Release` folder that requires .NET runtime.
+- `publish.bat` - Creates a fully standalone executable in `publish/win-x64` folder with all dependencies included. This can be distributed to other computers without needing .NET installed.
 
 ---
 

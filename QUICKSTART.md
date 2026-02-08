@@ -86,14 +86,21 @@ After building successfully, run the app:
 **Option A: Double-Click Method**
 1. Find the file `run.bat` in Windows Explorer
 2. Double-click it
-3. The F1 Live Timing app will start!
+3. A build window will appear, then the F1 Live Timing app will start!
 
 **Option B: Command Line Method**
 1. In Command Prompt, type: `run.bat`
 2. Press Enter
-3. The app will start!
+3. The app will build and start!
+
+**What's happening?**
+- `run.bat` builds the app (just like `build.bat`)
+- It creates an executable at: `src\MotorsportsApp.Desktop\bin\Release\net8.0-windows\win-x64\MotorsportsApp.Desktop.exe`
+- Then it automatically launches the app
 
 The application window should appear with the F1 Live Timing interface. 🎉
+
+**Note:** The .exe created by `run.bat` requires .NET to be installed. For a standalone version that can run on any Windows PC without .NET, use `publish.bat` instead (see Advanced section below).
 
 ---
 
@@ -168,14 +175,23 @@ motorsportsapp/
 
 ## 🔧 Advanced: Creating a Standalone Executable
 
-Want to run the app without needing .NET installed, or share it with friends?
+Want to create a version that can run on **any Windows PC without needing .NET installed**, or share it with friends?
+
+**Use `publish.bat` instead of `run.bat`:**
 
 1. Double-click `publish.bat` (or run it from Command Prompt)
-2. Wait for it to complete
-3. Find the executable in: `publish\win-x64\MotorsportsApp.Desktop.exe`
-4. You can copy this entire `publish\win-x64` folder anywhere and run the `.exe`
+2. Wait for it to complete (takes about 1-2 minutes)
+3. Find the standalone executable in: `publish\win-x64\MotorsportsApp.Desktop.exe`
+4. You can copy the entire `publish\win-x64` folder anywhere (or to another PC) and run the `.exe`
 
-The standalone version includes all dependencies, so it's larger (~150MB) but doesn't need .NET to be installed.
+**What's the difference?**
+- `run.bat` creates an .exe that needs .NET installed (~150KB executable + requires .NET runtime)
+- `publish.bat` creates a fully standalone .exe (~150MB, includes everything needed to run)
+
+The standalone version is larger but completely self-contained. Perfect for:
+- Running on a PC without .NET installed
+- Sharing with friends who don't want to install .NET
+- Creating a portable version on a USB drive
 
 ---
 
