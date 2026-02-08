@@ -2,10 +2,12 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Http;
 using MotorsportsApp.Core.ViewModels;
 using MotorsportsApp.Data.Context;
 using MotorsportsApp.Services.Interfaces;
 using MotorsportsApp.Services.ApiClients;
+using MotorsportsApp.Services.Caching;
 
 namespace MotorsportsApp.Desktop;
 
@@ -25,8 +27,37 @@ public partial class App : Application
                 services.AddDbContext<MotorsportsDbContext>(options =>
                     options.UseSqlite("Data Source=motorsports.db"));
 
-                // Services
-                services.AddHttpClient<IF1DataService, ErgastApiClient>();
+                // Memory Cache
+                services.AddMemoryCache();
+
+                // HTTP Client Factory
+                services.AddHttpClient();
+
+                // API Clients - register as separate services for composite
+                services.AddTransient<ErgastApiClient>();
+                services.AddTransient<OpenF1ApiClient>();
+
+                // Composite service with multiple API clients
+                services.AddSingleton<CompositeF1DataService>(sp =>
+                {
+                    var apiClients = new List<IF1DataService>
+                    {
+                        sp.GetRequiredService<ErgastApiClient>(),
+                        sp.GetRequiredService<OpenF1ApiClient>()
+                    };
+                    var logger = sp.GetRequiredService<Microsoft.Extensions.Logging.ILogger<CompositeF1DataService>>();
+                    return new CompositeF1DataService(apiClients, logger);
+                });
+
+                // Cached service as the primary IF1DataService
+                services.AddSingleton<IF1DataService>(sp =>
+                {
+                    var compositeService = sp.GetRequiredService<CompositeF1DataService>();
+                    var cache = sp.GetRequiredService<Microsoft.Extensions.Caching.Memory.IMemoryCache>();
+                    var logger = sp.GetRequiredService<Microsoft.Extensions.Logging.ILogger<CachedF1DataService>>();
+                    return new CachedF1DataService(compositeService, cache, logger);
+                });
+
                 services.AddSingleton<ILiveTimingService, MockLiveTimingService>();
 
                 // ViewModels
